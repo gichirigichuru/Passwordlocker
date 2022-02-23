@@ -13,7 +13,7 @@ class TestAccount(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_account = Account("James","Muri123",) # create contact object
+        self.new_account = Account("James","Muri123",) # create account object
     
     def test_init(self):
         '''
@@ -22,5 +22,14 @@ class TestAccount(unittest.TestCase):
 
         self.assertEqual(self.new_account.user_name,"James")
         self.assertEqual(self.new_account.password,"Muri123")
-if __name__ == '__main__':
+
+    def test_save_account(self):
+        '''
+        test_save_account test case to test if the account object is saved into
+         the account list
+        '''
+        self.new_account.save_account() # saving the new account
+        self.assertEqual(len(Account.account_list),1)
+
+if __name__ ==  '__main__':
     unittest.main()
