@@ -6,3 +6,9 @@ def create_account(uname,password):
     '''
     new_account = Account(uname,password)
     return new_account
+
+def save_accounts(account):
+    '''
+    Function to save account
+    '''
+    account.save_account()
