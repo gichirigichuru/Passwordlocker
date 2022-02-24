@@ -31,14 +31,21 @@ class TestAccount(unittest.TestCase):
         self.new_account.save_account() # saving the new account
         self.assertEqual(len(Account.account_list),1)
 
+# setup and class creation up here
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Account.account_list = []
+
     def test_save_multiple_account(self):
             '''
             test_save_multiple_contact to check if we can save multiple contact
             objects to our contact_list
             '''
-            self.new_contact.save_contact()
+            self.new_account.save_account()
             test_account = Account("Test","user") # new contact
-            test_account.save_contact()
+            test_account.save_account()
             self.assertEqual(len(Account.account_list),2)
 
 if __name__ ==  '__main__':
