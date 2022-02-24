@@ -41,3 +41,62 @@ def find_account(username):
 
 
 
+def main():
+  print("Hello Welcome to your credentials list. What is your name?")
+  user_name = input()
+
+  print(f"Hello {user_name}. What would you like to do?")
+  print('\n')
+
+  while True:
+    print("Use these short codes : ca - create a new account, da - display accounts, de -delete an account, ex -exit the account list")
+
+    short_code = input().lower()
+
+    if short_code == 'ca':
+      print("New Account")
+      print("-"*10)
+
+      print("Username ....")
+      username = input()
+
+      print("Password ....")
+      password = input()
+
+      save_accounts(create_account(username, password))
+      print('\n')
+      print(f"New Account {username} with password: {password} created")
+      print('\n')
+
+    elif short_code == 'da':
+      if display_accounts():
+        print("Here is a list of all your accounts")
+        print("\n")
+
+        for account in display_accounts():
+          print(f"username: {account.user_name} | password: {account.password}")
+        
+        print('\n')
+      else:
+        print('\n')
+        print("You dont seem to have any contacts saved yet")
+        print('\n')
+    
+    elif short_code == 'de':
+      print("Enter the username of the account you want to delete")
+
+      search_username = input()
+      if check_existing_accounts(username):
+        search_account = find_account(username)
+        delete_account(search_account)
+      else:
+        print("That contact does not exist")
+    
+    elif short_code == 'ex':
+      print("Bye .......")
+      break
+
+
+
+
+
