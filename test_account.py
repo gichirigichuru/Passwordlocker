@@ -44,9 +44,20 @@ class TestAccount(unittest.TestCase):
             objects to our contact_list
             '''
             self.new_account.save_account()
-            test_account = Account("Test","user") # new contact
+            test_account = Account("Test","user") # new account
             test_account.save_account()
             self.assertEqual(len(Account.account_list),2)
+
+    def test_delete_account(self):
+            '''
+            test_delete_account to test if we can remove a account from our account list
+            '''
+            self.new_account.save_account()
+            test_account = Account("Test","user",) # new account
+            test_account.save_account()
+
+            self.new_account.delete_account()# Deleting a account object
+            self.assertEqual(len(Account.account_list),1)
 
 if __name__ ==  '__main__':
     unittest.main()

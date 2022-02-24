@@ -16,3 +16,11 @@ class Account:
     '''
 
     Account.account_list.append(self)
+
+  def delete_account(self):
+
+        '''
+        delete_contact method deletes a saved contact from the contact_list
+        '''
+
+        Account.account_list.remove(self)  
