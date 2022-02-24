@@ -8,3 +8,11 @@ class Account:
     self.user_name = user_name
     self.password = password
   
+    Account_list =[] #Empty account list
+   # Init method up here
+  def save_account(self):
+    '''
+    save_contact method saves contact objects into contact_list
+    '''
+
+    Account.account_list.append(self)
