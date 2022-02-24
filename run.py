@@ -32,4 +32,12 @@ def check_existing_accounts(username):
   return Account.account_exist(username)
 
 
+def find_account(username):
+  '''
+  Function that finds a contact by number and returns the contact
+  '''
+  return Account.find_by_username(username)
+
+
+
 
