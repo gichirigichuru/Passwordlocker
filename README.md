@@ -18,3 +18,7 @@ No live link at the moment (console application)
 * Python
 ## Support and contact details
 gichirigichuru@gmail.com
+
+### License
+This is under the [MIT](LICENSE) license
+Copyright (c) 2022 **Zachary Gichiri**
