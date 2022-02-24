@@ -1,5 +1,8 @@
 #!/usr/bin/env python3.8
 from account import Account
+import string
+import random
+
 def create_account(uname,password):
     '''
     Function to create a new account
@@ -38,6 +41,10 @@ def find_account(username):
   '''
   return Account.find_by_username(username)
 
+
+S = 12  # number of characters in the random password.  
+# call random.choices() string module to find the string in Uppercase + numeric data.  
+ran = ''.join(random.choices(string.ascii_uppercase + string.digits, k = S))
 
 
 
@@ -96,7 +103,8 @@ def main():
       print("Bye .......")
       break
 
-
+if __name__ == '__main__':
+  main()
 
 
 
