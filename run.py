@@ -18,11 +18,18 @@ def delete_account(account):
   Function to delete account
   '''
   account.delete_account()
-  
+
 def display_accounts():
   '''
   Function to return all saved accounts
   '''
   return Account.display_accounts()
+
+def check_existing_accounts(username):
+  '''
+  Function that check if an account exists with that username and return a Boolean
+  '''
+  return Account.account_exist(username)
+
 
 
